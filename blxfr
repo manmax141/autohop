@@ -11,9 +11,9 @@ event:InvokeServer("SetTeam","Marines")
 spawn(function()
     while true do wait(.15)
    if gui.Visible then
-    vu:Button1Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
-    wait(0.1)
-    vu:Button1Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+    for i,v in pairs(getconnections(gui.Marines.Frame.ViewportFrame.TextButton.MouseButton1Click)) do
+        v:Fire()
+     end
         mousemoveabs(1100,470.427)
    end
 end
